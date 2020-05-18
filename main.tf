@@ -1,5 +1,5 @@
 resource "ibm_is_public_gateway" "publicgateway1" {
-  name = "gateway1"
+  name = "got-relationships-subnet-pgw"
   vpc  = var.vpc
   zone = var.zone1
 }
