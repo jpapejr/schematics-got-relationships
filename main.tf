@@ -10,10 +10,6 @@ resource "ibm_is_subnet" "subnet1" {
 }
 
 
-resource "ibm_is_ssh_key" "sshkey" {
-  name       = "jtpape"
-}
-
 resource "ibm_is_instance" "instance1" {
   name    = "got-relationships-1"
   image   = var.image
@@ -25,6 +21,6 @@ resource "ibm_is_instance" "instance1" {
 
   vpc       = ibm_is_vpc.vpc1.id
   zone      = var.zone1
-  keys      = [ibm_is_ssh_key.sshkey.id]
+  keys      = ["r014-13838d07-5ae1-42c5-bc70-d284dbfcdfbb"]
   user_data = file("cloud-init")
 }
