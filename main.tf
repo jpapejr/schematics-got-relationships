@@ -1,4 +1,4 @@
-resource "ibm_is_vpc" "vpc1" {
+data "ibm_is_vpc" "vpc1" {
   name = "us-east-v2"
 }
 
