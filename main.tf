@@ -10,7 +10,7 @@ resource "ibm_is_subnet" "subnet1" {
 }
 
 
-data "ibm_is_ssh_key" "sshkey" {
+resource "ibm_is_ssh_key" "sshkey" {
   name       = "jtpape"
 }
 
@@ -26,5 +26,5 @@ resource "ibm_is_instance" "instance1" {
   vpc       = ibm_is_vpc.vpc1.id
   zone      = var.zone1
   keys      = [ibm_is_ssh_key.sshkey.id]
-  user_data = file("nginx.sh")
+  user_data = file("cloud-init")
 }
