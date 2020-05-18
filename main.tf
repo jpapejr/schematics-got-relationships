@@ -1,6 +1,6 @@
 resource "ibm_is_public_gateway" "publicgateway1" {
   name = "gateway1"
-  vpc  = ibm_is_vpc.vpc1.id
+  vpc  = var.vpc
   zone = var.zone1
 }
 
