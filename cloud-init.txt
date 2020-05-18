@@ -1,13 +1,15 @@
 #cloud-config
 manage_etc_hosts: true
-package_upgrade: false
+package_upgrade: true
 packages:
-- httpd
+- nginx
 - git
 - nodejs
+- npm
 runcmd:
-- 'cp /usr/share/httpd/noindex/index.html /var/www/html'
 - 'git clone https://github.com/jpapejr/got-relationships /tmp/app'
-- 'cd /tmp/app && grunt dist'
+- 'npm install -f grunt-cli'
+- 'cd /tmp/app && npm install && grunt dist'
+- 'cp -R /tmp/app/dist /var/www/html'
 - 'systemctl start httpd'
 final_message: "The system is finally up, after $UPTIME seconds"
