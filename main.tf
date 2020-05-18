@@ -22,5 +22,5 @@ resource "ibm_is_instance" "instance1" {
   vpc       = ibm_is_vpc.vpc1.id
   zone      = var.zone1
   keys      = ["r014-13838d07-5ae1-42c5-bc70-d284dbfcdfbb"]
-  user_data = file("./cloud-init")
+  user_data = file("./cloudinit")
 }
