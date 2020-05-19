@@ -7,9 +7,7 @@ packages:
 - nodejs
 - npm
 runcmd:
-- 'git clone https://github.com/jpapejr/got-relationships /tmp/app'
-- 'npm install -f grunt-cli'
-- 'cd /tmp/app && npm install && grunt dist'
+- 'curl https://s3.us-east.cloud-object-storage.appdomain.cloud/got-relationships-deploy/app.tar.gz -H "Authorization: bearer ${BEARER}
 - 'cp -R /tmp/app/dist /var/www/html'
 - 'systemctl start httpd'
 final_message: "The system is finally up, after $UPTIME seconds"
