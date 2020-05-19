@@ -1,7 +1,7 @@
 data "template_file" "cloudinit" {
   template = file("./cloud-init.txt")
   vars = {
-    BEARER = var.BEARER
+    BEARER = var.bearer
   }
 }
 
