@@ -4,6 +4,6 @@ package_upgrade: true
 packages:
 - nginx
 runcmd:
-- 'curl https://s3.us-east.cloud-object-storage.appdomain.cloud/got-relationships-deploy/app.tar.gz -H "Authorization: bearer ${BEARER} -o /var/www/html'
+- 'curl https://s3.us-east.cloud-object-storage.appdomain.cloud/got-relationships-deploy/app.tar.gz -H "Authorization: bearer ${BEARER}" -o /var/www/html'
 - 'systemctl start httpd'
 final_message: "The system is finally up, after $UPTIME seconds"
