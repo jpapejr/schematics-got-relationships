@@ -2,6 +2,8 @@ variable "zone1" {
   default = "us-east-1"
 }
 
+variable "subnet" {}
+
 variable "vpc" {}
 
 variable "image" {
