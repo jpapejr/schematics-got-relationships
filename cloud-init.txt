@@ -3,11 +3,7 @@ manage_etc_hosts: true
 package_upgrade: true
 packages:
 - nginx
-- git
-- nodejs
-- npm
 runcmd:
-- 'curl https://s3.us-east.cloud-object-storage.appdomain.cloud/got-relationships-deploy/app.tar.gz -H "Authorization: bearer ${BEARER}
-- 'cp -R /tmp/app/dist /var/www/html'
+- 'curl https://s3.us-east.cloud-object-storage.appdomain.cloud/got-relationships-deploy/app.tar.gz -H "Authorization: bearer ${BEARER} -o /var/www/html'
 - 'systemctl start httpd'
 final_message: "The system is finally up, after $UPTIME seconds"
