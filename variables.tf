@@ -2,6 +2,8 @@ variable "zone1" {
   default = "us-east-1"
 }
 
+variable "bearer" {}
+
 variable "subnet" {}
 
 variable "vpc" {}
